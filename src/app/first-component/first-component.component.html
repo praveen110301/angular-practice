@@ -1,0 +1,32 @@
+<p class="first">first-component works! YAY!!!</p>
+<button (click)="print()">Click </button>
+<h1 *ngIf="status ;then if1 else else1"></h1>
+<ng-template #if1>
+    Hello programmer
+</ng-template>
+<ng-template #else1>
+    kya haal h sb bdiya
+</ng-template>
+<br /><br />
+<input type="text" placeholder="Enter color">
+<button (click)="change()">Enter</button>
+<h1>Hello</h1>
+<br />
+
+<form #loginForm="ngForm" (ngSubmit)="user_login(loginForm.value)">
+    <input #name placeholder="enter ur name" name="name" ngModel><br />
+    <input #pass placeholder="password" name="password" ngModel><br />
+    <button>Login</button>
+</form>
+<br /><br />
+<p>{{20}} dollars in rupees are {{20| uSDINR}} </p>
+<input type="text" placeholder="enter amout in dollars" #dollars>
+<!-- <button (click)="dollars.value:number|uSDINR">convert</button> -->
+
+<p class="textt" [ngStyle]="{color: status==true?'red':'green'}">child component called</p>
+
+<app-child [firstName]="firstName" [lastName]="lastName" (outputFromChild)="receiveChildData($event)">
+
+</app-child>
+
+<button (click)="display()">alert something</button>

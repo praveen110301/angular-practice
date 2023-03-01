@@ -1,0 +1,61 @@
+<h3 style="display: flex; justify-content: center;">Template driven form</h3>
+<div class="form-box" style="display: flex; justify-content: center ">
+    <form class="col-md-6" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        <div class="form-group mt-3">
+            <label for="First Name">First Name</label>
+            <input type="text" required #first_name="ngModel" pattern="[a-zA-Z]+$" placeholder="first name"
+                name="first name" ngModel>
+            <p *ngIf=" first_name.touched && first_name.invalid" style="font-size: 10px; color: red; margin: 0 0;">Enter
+                a valid first name</p>
+        </div>
+        <div class="form-group mt-3">
+            <label for="Last Name">Last Name</label>
+            <input type="text" required #last_name="ngModel" pattern="[a-zA-Z]+$" placeholder="last name"
+                name="last name" ngModel>
+            <p *ngIf=" last_name.touched && last_name.invalid" style="font-size: 10px; color: red; margin: 0 0;">Enter
+                a valid last name</p>
+        </div>
+        <div class="form-group mt-3">
+            <label for="Email">Email</label>
+            <input type="text" required #email="ngModel" email placeholder="email" name="email" ngModel>
+            <p *ngIf=" email.touched && email.invalid" style="font-size: 10px; color: red; margin: 0 0;">Enter
+                a valid email</p>
+        </div>
+        <div class="form-group1 mt-3">
+            <label for="Gender">Gender</label>
+            <input type="radio" value="male" name="male">Male
+            <input type="radio" value="female" name="female">Female
+        </div>
+        <div class="form-group mt-3">
+            <label for="Country">Country</label>
+            <select type="text" required #country name="country" ngModel>
+                <option *ngFor="let country of countryList" [value]="country">{{country}}</option>
+            </select>
+        </div>
+        <div class="form-group Address" ngModelGroup="address">
+            <label for="address">address:</label>
+            <!-- <label for="House No">house</label> -->
+            <input type="text" name="house no" placeholder="house no" style="margin-top:3px" ngModel>
+            <!-- <label for="Street">Street</label> -->
+            <input type="text" name="street" placeholder="street" style="margin-top:3px" ngModel>
+            <!-- <label for="City">City</label> -->
+            <input type="text" name="city" placeholder="city" style="margin-top:3px" ngModel>
+            <!-- <label for="state">State</label> -->
+            <input type="text" name="state" placeholder="state" style="margin-top:3px" ngModel>
+            <!-- <label for="country">Country</label> -->
+        </div>
+        <div class="btns">
+            <div class="form-group mt-3">
+                <button class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+            </div>
+            <div class="form-group mt-3">
+                <button class="btn btn-success" (click)="doReset(userForm)">Reset</button>
+            </div>
+        </div>
+    </form><br />
+</div>
+<div class="value">
+    <p>is first name field touched: {{first_name.touched}}</p>
+    <p>is form touched: {{userForm.touched}}</p>
+    <p>{{userForm.value|json}}</p>
+</div>

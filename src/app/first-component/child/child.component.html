@@ -1,0 +1,13 @@
+ <p>my firstname is {{firstName}}</p>
+<p>my lastname is {{lastName}}</p>
+<p>my fullname is {{firstName}} {{lastName}}</p>
+
+
+<button class="btn btn-success" (click)="sendDataToParent()">Send to Parent</button>
+<br>
+<button (click)="display()"> alert something for child component class</button>
+<br/>
+
+<div *ngFor="let item of user">
+    <p>{{item}}</p>
+</div>

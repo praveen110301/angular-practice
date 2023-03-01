@@ -1,0 +1,17 @@
+<p>API call</p>
+
+<button (click)="getUserData()">Fetch data</button>
+<table border="1px solid black">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>ADDRESS</th>
+    </tr>
+    <tr *ngFor="let userDetails of userData">
+        <td>{{userDetails.id}}</td>
+        <td>{{userDetails.name}}</td>
+        <td>{{userDetails.email}}</td>
+        <td>{{userDetails.address.city}}</td>
+    </tr>
+</table> 

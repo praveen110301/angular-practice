@@ -1,0 +1,42 @@
+.form-boxf{
+    padding: 4px;
+    width: 50%;
+    height: min-content;
+}
+.form-group{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3px;
+    margin: 2px 4px;
+} 
+.form-group1{
+    padding: 3px;
+    margin: 2px 4px;
+    
+}
+.btns{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.btn{
+    background-color: skyblue;
+    border-radius: 18px;
+    width: min-content;
+}
+.btn-success{
+    background-color: greenyellow;
+}
+Address{
+    margin: 3px 4px;
+    padding: 4px;
+    padding-left: 5px;
+}
+input{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+label{
+    font-size: 12px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
