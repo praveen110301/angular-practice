@@ -1,0 +1,29 @@
+<!-- <table border="1px solid black">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>ADDRESS</th>
+    </tr>
+    <tr *ngFor="let userDetail of data">
+        <td>{{userDetail.id}}</td>
+        <td>{{userDetail.name}}</td>
+        <td>{{userDetail.email}}</td>
+        <td>{{userDetail.address.city}}</td>
+    </tr>
+</table> -->
+
+<table class="table table-bordered my-2">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>ADDRESS</th>
+    </tr>
+    <tr *ngFor="let userDetail of data">
+        <td><a [routerLink]="['/user',userDetail.id]">{{userDetail.id}}</a></td>
+        <td>{{userDetail.name}}</td>
+        <td>{{userDetail.email}}</td>
+        <td>{{userDetail.address.city}}</td>
+    </tr>
+</table>

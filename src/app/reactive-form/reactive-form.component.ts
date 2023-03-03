@@ -24,5 +24,9 @@ export class ReactiveFormComponent {
     return this.userLogin.get('userPassword')
   }
 
+  resetForm() {
+    this.userLogin.reset();
+  }
+
 
 }

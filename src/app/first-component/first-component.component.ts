@@ -1,5 +1,5 @@
-import { Component ,Inject} from '@angular/core';
-import { USDINRPipe } from '../pipes/usd-inr.pipe';
+import { Component, Inject } from '@angular/core';
+import { usdInrPipe } from '../pipes/usd-inr.pipe';
 import { alertMessage } from '../services/alert.services';
 
 @Component({
@@ -7,20 +7,20 @@ import { alertMessage } from '../services/alert.services';
   templateUrl: './first-component.component.html',
   styleUrls: ['./first-component.component.scss'],
   // providers:[alertMessage]  not needed as it is called in app.module.ts
-  providers:[ {provide:'USE_FAKE', useValue: true },   
-]
+  providers: [{ provide: 'USE_FAKE', useValue: true },
+  ]
 })
 export class FirstComponentComponent {
-  title:string="component" 
+  title: string = "component"
   status = true
   colour = "black"
   firstName: string = "praveen"
   lastName: string = "singh"
 
-  constructor(private displayedText:alertMessage,@Inject('USE_FAKE') private useFake:string){
+  constructor(private displayedText: alertMessage, @Inject('USE_FAKE') private useFake: string) {
     console.log(useFake)
   }
-  
+
   print() {
     this.status = false
   }
@@ -30,18 +30,18 @@ export class FirstComponentComponent {
   change() {
   }
 
-  receiveChildData(data:string) {
+  receiveChildData(data: string) {
     console.log(data);
   }
-  user_login(item:any){
+  user_login(item: any) {
     console.log(item)
   }
 
-  display():void{
+  display(): void {
     // var displayedText = new alertMessage
     this.displayedText.Onclicked(this.title)
   }
-  convertIntoRs(value:number){
+  convertIntoRs(value: number) {
   }
 
   //checking life cycle hook

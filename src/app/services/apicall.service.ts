@@ -7,15 +7,19 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApicallService {
 
-  constructor(private httprequest:HttpClient) { 
+  constructor(private httprequest: HttpClient) {
     console.log("Httprequest instance created.")
   }
 
-  getUserData():Observable<any>{
-    let apiUrl="https://jsonplaceholder.typicode.com/users"
-    return this.httprequest.get(apiUrl);
+  getUserData(): Observable<any> {
+    let apiUrl = "https://jsonplaceholder.typicode.com/users"
+    return this.httprequest.get(apiUrl)
+    // .catch(()=>{
+
+    // })
   }
-  
+
 }

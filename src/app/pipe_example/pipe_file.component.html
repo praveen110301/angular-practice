@@ -1,0 +1,10 @@
+<input type="text" placeholder="enter gender" #gender>
+<button (click)="genderof(gender.value)">Ok</button>
+<p>My name is {{name}}</p>
+<p>after using pipe</p>
+<p>My name is {{name| giveTitle:'male'}}</p>
+<p>My name is {{name| giveTitle:'female'}}</p>
+<p>My name is {{name| giveTitle:'genderValue'}}</p>
+<p>{{genderValue}}</p>
+<p>directive example</p>
+<p hover>hello bro</p>

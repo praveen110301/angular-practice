@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { alertMessage } from './services/alert.services';
 
@@ -10,9 +10,14 @@ import { alertMessage } from './services/alert.services';
 })
 export class AppComponent {
   title = 'Angular_practice';
+  item: string = 'some data';  // lifecycle hook on changes ke liye
 
-  constructor(private displayedText: alertMessage) { }
+  constructor(private displayedText: alertMessage) { } //for serveices alertMessage service
 
+  changeInput() {   //method to change input properties to fire ngOnChanges
+    this.item = 'hello'
+    console.log(this.item)
+  }
   firstObservable = new Observable((observer) => {
     console.log('observable starts')
     setTimeout(() => { observer.next('1') }, 1000)

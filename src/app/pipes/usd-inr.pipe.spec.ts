@@ -1,8 +1,8 @@
-import { USDINRPipe } from './usd-inr.pipe';
+import { usdInrPipe } from './usd-inr.pipe';
 
 describe('USDINRPipe', () => {
   it('create an instance', () => {
-    const pipe = new USDINRPipe();
+    const pipe = new usdInrPipe();
     expect(pipe).toBeTruthy();
   });
 });
